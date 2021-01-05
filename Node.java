@@ -23,4 +23,18 @@ public class Node {
     return prev;
   }
 
+  public void setData(String value) {
+    data = value;
+  }
+
+  //setting next to another Node's address
+  public void setNext(Node next) {
+    this.next = next;
+  }
+
+  //setting prev to another Node's address
+  public void setPrev(Node prev) {
+    this.prev = prev;
+  }
+
 }
