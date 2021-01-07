@@ -57,12 +57,23 @@ public class MyLinkedList {
     size++;
   }
 
+  //helper method
   private Node nthNode(int index) {
     Node current = start;
     for (int i = 1; i < index; i++) {
       current = current.getNext();
     }
     return current;
+  }
+
+  public String toString() {
+    String ans = "[";
+    Node current = start;
+    while (current.getNext() != null) {
+      ans += current.getData() + ", ";
+      current = current.getNext();
+    }
+    return ans;
   }
 
 
