@@ -27,8 +27,43 @@ public class MyLinkedList {
     }
     end = element;
     size++;
+    // System.out.println("head is " + start);
+    // System.out.println("tail is " + end);
     return true;
   }
 
-  
+  //adds to specified index
+  public void add(int index, String value) {
+    Node element = new Node(value);
+    if (size() == 0) { //nothing in here, so new Node is both head and tail
+      start = element;
+      end = element;
+    }
+    else if (index == 0) { //so new Node becomes the head of chain
+      element.setNext(start);
+      start.setPrev(element);
+    }
+    else if (index == size()) { //so new Node becomes end of chain
+      element.setPrev(end);
+      end.setNext(element);
+    }
+    else { //all other scenarios (ie. adding to middle)
+      Node current = nthNode(index);
+      element.setPrev(current);
+      element.setNext(current.getNext());
+      current.setNext(element);
+      element.getNext().setPrev(current);
+      }
+    size++;
+  }
+
+  private Node nthNode(int index) {
+    Node current = start;
+    for (int i = 1; i < index; i++) {
+      current = current.getNext();
+    }
+    return current;
+  }
+
+
 }
