@@ -69,11 +69,12 @@ public class MyLinkedList {
   public String toString() {
     String ans = "[";
     Node current = start;
-    while (current.getNext() != null) {
-      ans += current.getData() + ", ";
+    for (int i = 0; i < size(); i++) {
+      ans += current.getData();
+      if (i != size()-1) ans += ", ";
       current = current.getNext();
     }
-    return ans;
+    return ans + "]";
   }
 
 
