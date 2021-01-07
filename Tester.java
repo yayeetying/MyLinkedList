@@ -19,6 +19,14 @@ public class Tester {
     listo.add(2, "at");
     System.out.println(listo.toString());
 
+    System.out.println();
+    for (int i = 0; i < listo.size(); i++) {
+      System.out.println(listo.get(i));
+    }
+
+    System.out.println();
+    
+
   }
 
 }

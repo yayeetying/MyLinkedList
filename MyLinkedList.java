@@ -63,13 +63,18 @@ public class MyLinkedList {
     size++;
   }
 
-  //helper method
+  //helper method to traverse LinkedList
   private Node nthNode(int index) {
     Node current = start;
     for (int i = 1; i < index; i++) {
       current = current.getNext();
     }
     return current;
+  }
+
+  public String get(int index) {
+    Node want = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
+    return want.getData();
   }
 
   public String toString() {
