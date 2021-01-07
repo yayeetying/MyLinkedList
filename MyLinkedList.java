@@ -35,6 +35,7 @@ public class MyLinkedList {
   //adds to specified index
   public void add(int index, String value) {
     Node element = new Node(value);
+    //System.out.println(element);
     if (size() == 0) { //nothing in here, so new Node is both head and tail
       start = element;
       end = element;
@@ -42,10 +43,14 @@ public class MyLinkedList {
     else if (index == 0) { //so new Node becomes the head of chain
       element.setNext(start);
       start.setPrev(element);
+      start = element;
+      // System.out.println(element.getNext());
+      // System.out.println(start.getPrev());
     }
     else if (index == size()) { //so new Node becomes end of chain
       element.setPrev(end);
       end.setNext(element);
+      end = element;
     }
     else { //all other scenarios (ie. adding to middle)
       Node current = nthNode(index);
@@ -53,6 +58,7 @@ public class MyLinkedList {
       element.setNext(current.getNext());
       current.setNext(element);
       element.getNext().setPrev(current);
+      //System.out.println(element.getNext().getPrev());
       }
     size++;
   }
@@ -70,6 +76,7 @@ public class MyLinkedList {
     String ans = "[";
     Node current = start;
     for (int i = 0; i < size(); i++) {
+      //System.out.println(current.getData());
       ans += current.getData();
       if (i != size()-1) ans += ", ";
       current = current.getNext();
