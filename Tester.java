@@ -25,7 +25,12 @@ public class Tester {
     }
 
     System.out.println();
-    
+    System.out.println(listo.toString());
+    for (int i = 0; i < listo.size(); i++) {
+      System.out.print(listo.set(i, "hungi") + " ");
+    }
+    System.out.println();
+    System.out.println(listo.toString());
 
   }
 

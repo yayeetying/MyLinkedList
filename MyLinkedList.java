@@ -77,6 +77,13 @@ public class MyLinkedList {
     return want.getData();
   }
 
+  public String set(int index, String value) {
+    Node want = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
+    String prev = want.getData();
+    want.setData(value);
+    return prev;
+  }
+
   public String toString() {
     String ans = "[";
     Node current = start;
