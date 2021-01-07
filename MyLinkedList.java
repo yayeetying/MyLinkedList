@@ -76,6 +76,9 @@ public class MyLinkedList {
   }
 
   public String get(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index is badddd");
+    }
     Node want = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
     return want.getData();
   }

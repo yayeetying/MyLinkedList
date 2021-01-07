@@ -52,6 +52,36 @@ public class Tester {
     listo.add(listo.size(), "owo"); //this should work (it's like adding to end of list)
     System.out.println(listo.toString());
 
+    System.out.println();
+    try {
+      listo.get(-1);
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    try {
+      listo.get(listo.size());
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    try {
+      listo.get(listo.size()+1);
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    try {
+      listo.get(100);
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+    System.out.println(listo.toString());
+
 
   }
 
