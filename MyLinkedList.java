@@ -60,7 +60,7 @@ public class MyLinkedList {
       element.setPrev(current);
       element.setNext(current.getNext());
       current.setNext(element);
-      element.getNext().setPrev(current);
+      element.getNext().setPrev(element);
       //System.out.println(element.getNext().getPrev());
       }
     size++;
@@ -108,10 +108,10 @@ public class MyLinkedList {
   public String toStringReversed() {
     String ans = "[";
     Node current = end;
-    for (int i = size()-1; i > 1; i--) {
+    for (int i = size(); i > 0; i--) {
       System.out.println(current.getData());
       ans += current.getData();
-      if (i != 2) ans += ", ";
+      if (i != 1) ans += ", ";
       current = current.getPrev();
     }
     return ans + "]";
