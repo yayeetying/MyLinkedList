@@ -34,6 +34,9 @@ public class MyLinkedList {
 
   //adds to specified index
   public void add(int index, String value) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("index inputted is baaaad");
+    }
     Node element = new Node(value);
     //System.out.println(element);
     if (size() == 0) { //nothing in here, so new Node is both head and tail
