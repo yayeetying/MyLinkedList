@@ -105,5 +105,17 @@ public class MyLinkedList {
     return ans + "]";
   }
 
+  public String toStringReversed() {
+    String ans = "[";
+    Node current = end;
+    for (int i = size()-1; i > 1; i--) {
+      System.out.println(current.getData());
+      ans += current.getData();
+      if (i != 2) ans += ", ";
+      current = current.getPrev();
+    }
+    return ans + "]";
+  }
+
 
 }

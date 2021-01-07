@@ -18,6 +18,7 @@ public class Tester {
     listo.add(5, "where");
     listo.add(2, "at");
     System.out.println(listo.toString());
+    System.out.println(listo.toStringReversed());
 
     System.out.println();
     for (int i = 0; i < listo.size(); i++) {
@@ -113,7 +114,11 @@ public class Tester {
       System.out.println("yaaaaay");
     }
 
+    for (int i = 0; i < listo.size(); i++) {
+      System.out.println(listo.set(i, Integer.toString(i)));
+    }
     System.out.println(listo.toString());
+    System.out.println(listo.toStringReversed());
 
 
   }
