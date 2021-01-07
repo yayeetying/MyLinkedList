@@ -80,6 +80,39 @@ public class Tester {
     catch(IndexOutOfBoundsException e) {
       System.out.println("yaaaaay");
     }
+
+    System.out.println();
+    System.out.println(listo.toString());
+    try {
+      listo.set(-1, "teehee");
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    listo.set(0, "teehee"); //should work (adding to beginning)
+
+    try {
+      listo.set(listo.size(), "teehee");
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    try {
+      listo.set(listo.size()+1, "teehee");
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
+    try {
+      listo.set(50, "teehee");
+    }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("yaaaaay");
+    }
+
     System.out.println(listo.toString());
 
 

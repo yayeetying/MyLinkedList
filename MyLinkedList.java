@@ -84,6 +84,9 @@ public class MyLinkedList {
   }
 
   public String set(int index, String value) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index is badddd");
+    }
     Node want = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
     String prev = want.getData();
     want.setData(value);
