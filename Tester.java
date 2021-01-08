@@ -183,21 +183,26 @@ public class Tester {
       b.add(Integer.toString(i));
     }
     System.out.println("a: " + a.toString());
+    System.out.println(a.size());
     System.out.println("b: " + b.toString());
+    System.out.println(b.size());
     a.extend(b);
     System.out.println("a: " + a.toString());
+    System.out.println(a.size());
     System.out.println("b: " + b.toString());
+    System.out.println(b.size());
 
     a.add("reee");
     a.add(0, "gugu");
     a.add(7, "uuga");
     System.out.println("a: " + a.toString());
+    System.out.println(a.size());
     b.add("uwu");
     b.add("owo");
     b.add(0,"yuuu");
     b.add(1, "best");
     System.out.println("b: " + b.toString());
-
+    System.out.println(b.size());
 
   }
 
