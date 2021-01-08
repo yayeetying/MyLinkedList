@@ -173,6 +173,32 @@ public class Tester {
     System.out.println(clone3.toStringReversed());
     System.out.println();
 
+    //~~~~~~~~~~~~~~~~~~~~~//
+    MyLinkedList a = new MyLinkedList();
+    MyLinkedList b = new MyLinkedList();
+    for (int i = 0; i < 5; i++) {
+      a.add(Integer.toString(i));
+    }
+    for (int i = 5; i < 10; i++) {
+      b.add(Integer.toString(i));
+    }
+    System.out.println("a: " + a.toString());
+    System.out.println("b: " + b.toString());
+    a.extend(b);
+    System.out.println("a: " + a.toString());
+    System.out.println("b: " + b.toString());
+
+    a.add("reee");
+    a.add(0, "gugu");
+    a.add(7, "uuga");
+    System.out.println("a: " + a.toString());
+    b.add("uwu");
+    b.add("owo");
+    b.add(0,"yuuu");
+    b.add(1, "best");
+    System.out.println("b: " + b.toString());
+
+
   }
 
 }

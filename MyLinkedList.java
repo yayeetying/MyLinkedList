@@ -27,8 +27,6 @@ public class MyLinkedList {
     }
     end = element;
     size++;
-    // System.out.println("head is " + start);
-    // System.out.println("tail is " + end);
     return true;
   }
 
@@ -38,7 +36,6 @@ public class MyLinkedList {
       throw new IndexOutOfBoundsException("index inputted is baaaad");
     }
     Node element = new Node(value);
-    //System.out.println(element);
     if (size() == 0) { //nothing in here, so new Node is both head and tail
       start = element;
       end = element;
@@ -47,8 +44,6 @@ public class MyLinkedList {
       element.setNext(start);
       start.setPrev(element);
       start = element;
-      // System.out.println(element.getNext());
-      // System.out.println(start.getPrev());
     }
     else if (index == size()) { //so new Node becomes end of chain
       element.setPrev(end);
@@ -61,7 +56,6 @@ public class MyLinkedList {
       element.setNext(current.getNext());
       current.setNext(element);
       element.getNext().setPrev(element);
-      //System.out.println(element.getNext().getPrev());
       }
     size++;
   }
@@ -127,7 +121,6 @@ public class MyLinkedList {
     String ans = "[";
     Node current = start;
     for (int i = 0; i < size(); i++) {
-      //System.out.println(current.getData());
       ans += current.getData();
       if (i != size()-1) ans += ", ";
       current = current.getNext();
@@ -144,6 +137,20 @@ public class MyLinkedList {
       current = current.getPrev();
     }
     return ans + "]";
+  }
+
+  //postconditions: 1) all elements from other are removed from other,
+  //and connected to end of this linked list
+  //size of other reduced to 0; size of this is now the combined sizes of both lists
+  //NO LOOPING! keep it constant time O(1)
+  public void extend(MyLinkedList other) {
+    end.setNext(other.start);
+    other.start.setPrev(end);
+    end = other.end;
+    other.start = null;
+    other.end = null;
+    size += other.size();
+    other.size = 0;
   }
 
 
