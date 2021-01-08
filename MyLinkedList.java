@@ -67,12 +67,44 @@ public class MyLinkedList {
   }
 
   //helper method to traverse LinkedList
+  //**my nthNode stops 1 Node before the actual index it wants
   private Node nthNode(int index) {
     Node current = start;
     for (int i = 1; i < index; i++) {
       current = current.getNext();
     }
     return current;
+  }
+
+  public String remove(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index inputted is baaaad");
+    }
+    //removing current, which is on index index
+    Node current = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
+    String removed = current.getData();
+    if (size() == 1) { //removing both the head and tail of chain
+      System.out.println("next is" + current.getNext());
+      System.out.println("prev is" + current.getPrev());
+      start = null;
+      end = null;
+    }
+    else if (index == 0) { //removing head of chain
+      start = current.getNext();
+      current.getNext().setPrev(null);
+      current.setNext(null);
+    }
+    else if (index == size() -1) { //removing tail of chain
+      end = current.getPrev();
+      current.getPrev().setNext(null);
+      current.setPrev(null);
+    }
+    else { //removing from middle of chain
+      current.getPrev().setNext(current.getNext()); //makes more sense if you draw it out
+      current.getNext().setPrev(current.getPrev());
+    }
+    size--;
+    return removed;
   }
 
   public String get(int index) {
