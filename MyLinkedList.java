@@ -84,19 +84,17 @@ public class MyLinkedList {
     Node current = nthNode(index+1); //my nthNode stops 1 Node before the actual index it wants
     String removed = current.getData();
     if (size() == 1) { //removing both the head and tail of chain
-      System.out.println("next is" + current.getNext());
-      System.out.println("prev is" + current.getPrev());
       start = null;
       end = null;
     }
     else if (index == 0) { //removing head of chain
       start = current.getNext();
-      current.getNext().setPrev(null);
+      start.setPrev(null);
       current.setNext(null);
     }
     else if (index == size() -1) { //removing tail of chain
       end = current.getPrev();
-      current.getPrev().setNext(null);
+      end.setNext(null);
       current.setPrev(null);
     }
     else { //removing from middle of chain
@@ -141,7 +139,6 @@ public class MyLinkedList {
     String ans = "[";
     Node current = end;
     for (int i = size(); i > 0; i--) {
-      System.out.println(current.getData());
       ans += current.getData();
       if (i != 1) ans += ", ";
       current = current.getPrev();

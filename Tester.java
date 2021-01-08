@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tester {
 
   public static void main(String[] args) {
@@ -119,7 +121,57 @@ public class Tester {
     }
     System.out.println(listo.toString());
     System.out.println(listo.toStringReversed());
+    System.out.println();
 
+    //~~~~~~~~~~~~~~~~~~~~~//
+
+    //listo has [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    MyLinkedList clone1 = new MyLinkedList(); //delete all from beginning
+    MyLinkedList clone2 = new MyLinkedList(); //delete all from end
+    MyLinkedList clone3 = new MyLinkedList(); //delete all from middle
+
+    for (int i = 0; i < listo.size(); i++) {
+      clone1.add(Integer.toString(i));
+    }
+    for (int i = 0; i < listo.size(); i++) {
+      clone2.add(Integer.toString(i));
+    }
+    for (int i = 0; i < listo.size(); i++) {
+      clone3.add(Integer.toString(i));
+    }
+    System.out.println(clone1.toString());
+    System.out.println(clone2.toString());
+    System.out.println(clone3.toString());
+
+    while (clone1.size() != 0) {
+      System.out.print(clone1.remove(0) + " ");
+    }
+
+    System.out.println();
+    System.out.println(clone1.toString());
+    System.out.println(clone1.toStringReversed());
+    System.out.println();
+
+    while (clone2.size() != 0) {
+      System.out.print(clone2.remove(clone2.size()-1) + " ");
+    }
+
+    System.out.println();
+    System.out.println(clone2.toString());
+    System.out.println(clone2.toStringReversed());
+    System.out.println();
+
+    for (int i = 0; i < 5; i++) {
+      System.out.print(clone3.remove(5) + " ");
+    }
+    while (clone3.size() != 0) {
+      System.out.print(clone3.remove(0) + " ");
+    }
+
+    System.out.println();
+    System.out.println(clone3.toString());
+    System.out.println(clone3.toStringReversed());
+    System.out.println();
 
   }
 
