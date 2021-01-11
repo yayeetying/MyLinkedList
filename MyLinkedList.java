@@ -144,11 +144,21 @@ public class MyLinkedList {
   //size of other reduced to 0; size of this is now the combined sizes of both lists
   //NO LOOPING! keep it constant time O(1)
   public void extend(MyLinkedList other) {
-    end.setNext(other.start);
-    other.start.setPrev(end);
-    end = other.end;
-    other.start = null;
-    other.end = null;
+    //both LinkedList have a size of 0 OR size of other LinkedList is 0
+    if ((size() == 0 && other.size() == 0) || other.size() == 0) {
+      //do nothing
+    }
+    else if (size() == 0) { //size of this LinkedList is 0
+      start = other.start;
+      end = other.end;
+    }
+    else { //extending 2 LinkedLists with stuff in em
+      end.setNext(other.start);
+      other.start.setPrev(end);
+      end = other.end;
+      other.start = null;
+      other.end = null;
+    }
     size += other.size();
     other.size = 0;
   }
