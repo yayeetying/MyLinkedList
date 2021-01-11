@@ -203,7 +203,34 @@ public class Tester {
     b.add(1, "best");
     System.out.println("b: " + b.toString());
     System.out.println(b.size());
+    System.out.println();
 
+
+    MyLinkedList coffee = new MyLinkedList(); //empty MyLinkedList
+    MyLinkedList monkey = new MyLinkedList(); //empty MyLinkedList
+    coffee.extend(monkey); //empty MyLinkedList extending an empty MyLinkedList
+    System.out.println(coffee.toString());
+    System.out.println(coffee.toStringReversed());
+    System.out.println(monkey.toString());
+    System.out.println(monkey.toStringReversed());
+    System.out.println();
+    b.extend(monkey); //not-empty MyLinkedList extending an empty MyLinkedList
+    System.out.println(b.toString());
+    System.out.println(b.toStringReversed());
+    System.out.println(monkey.toString());
+    System.out.println(monkey.toStringReversed());
+    System.out.println();
+    monkey.extend(b); //empty MyLinkedList extending a not-empty MyLinkedList
+    System.out.println(monkey.toString());
+    System.out.println(monkey.toStringReversed());
+    System.out.println(b.toString());
+    System.out.println(b.toStringReversed());
+    System.out.println();
+    monkey.extend(listo); //not-empty MyLinkedList extending a not-empty MyLinkedList
+    System.out.println(monkey.toString());
+    System.out.println(monkey.toStringReversed());
+    System.out.println(listo.toString());
+    System.out.println(listo.toStringReversed());
   }
 
 }
